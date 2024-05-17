@@ -16,7 +16,9 @@
 
 pluginManagement {
     includeBuild("build-logic")
-    includeBuild("declarative-gradle/unified-prototype/unified-plugin")
+    // If you need to work with the git version of the unified plugins,
+    // check it out in `../declarative-gradle` and uncomment the following line:
+    // includeBuild("../declarative-gradle/unified-prototype/unified-plugin")
     repositories {
         google()
         mavenCentral()
@@ -25,7 +27,7 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem")
+    id("org.gradle.experimental.android-ecosystem") version "0.1.0"
 }
 
 rootProject.name = "nowinandroid"
