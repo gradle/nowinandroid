@@ -51,9 +51,18 @@ conventions {
             jsonEnabled = true
         }
 
+        room {
+            // TODO: This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
+            schemaDirectory = "schemas"
+        }
+
         testing {
             jacoco {
                 version = "0.8.7"
+            }
+
+            testOptions {
+                testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
             }
         }
     }
