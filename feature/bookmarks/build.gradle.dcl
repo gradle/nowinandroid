@@ -8,7 +8,7 @@ androidLibrary {
     feature {}
 
     compose {
-        stabilityConfigurationFilePath = "compose_compiler_config.conf"
+        stabilityConfigurationFilePath = "/compose_compiler_config.conf"
         experimentalStrongSkipping = true
     }
 
