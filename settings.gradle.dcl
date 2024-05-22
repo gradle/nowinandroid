@@ -28,6 +28,9 @@ plugins {
     id("org.gradle.experimental.android-ecosystem")
 }
 
+// TODO: This is not supported in DCL files yet
+//  rootProject.name = "nowinandroid"
+
 dependencyResolutionManagement {
     // TODO: Enum properties are not supported in Declarative DSL right now
     // repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -36,7 +39,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "nowinandroid"
 
 conventions {
     androidLibrary {
