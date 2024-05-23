@@ -15,6 +15,8 @@ Converted subprojects:
 
 The `androidLibrary` software type exposes [several configuration options](https://github.com/gradle/declarative-gradle/blob/main/unified-prototype/unified-plugin/plugin-android/src/main/java/org/gradle/api/experimental/android/library/AndroidLibrary.java) and dependencies. Test related configuration mimics the existing Android extension for now. 
 
+The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.
+
 Syntax highlighting is limited to the latest nightly for Android Studio that understand Gradle DCL files.
 
 NOTE: The build logic and conventions used by declarative and non-declarative projects is currently duplicated. Subsequent milestones/feedback points will bring these back together. 
