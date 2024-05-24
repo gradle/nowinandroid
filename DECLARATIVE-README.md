@@ -12,12 +12,16 @@ Converted subprojects:
 - [`:core:common`](core/common/build.gradle.dcl)
 - [`:core:data`](core/data/build.gradle.dcl)
 - [`:core:domain`](core/domain/build.gradle.dcl)
+- [`:core:database`](core/database/build.gradle.dcl)
+- [`:core:data-test`](core/data-test/build.gradle.dcl)
 
 The `androidLibrary` software type exposes [several configuration options](https://github.com/gradle/declarative-gradle/blob/main/unified-prototype/unified-plugin/plugin-android/src/main/java/org/gradle/api/experimental/android/library/AndroidLibrary.java) and dependencies. Test related configuration mimics the existing Android extension for now. 
 
 The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.
 
-Syntax highlighting is limited to the latest nightly for Android Studio that understand Gradle DCL files.
+Syntax highlighting, code completion and content assist are limited to the latest nightly for Android Studio that understands Gradle DCL files.
+
+There are several capabilities of the `androidLibrary` or `androidApplication` software types that are optional, such as `hilt`, `compose`, `libraryDesugaring`, `feature` and `kotlinSerialization`.  These capabilities are only enabled by configuring them in the software type model.  For instance, an `androidLibrary` software type will not use hilt unless its `hilt { }` block is configured.  This block can be configured with or without setting any properties of hilt.  In other words, an empty `hilt { }` block will enable the hilt capability, but will use its defaults.
 
 NOTE: The build logic and conventions used by declarative and non-declarative projects is currently duplicated. Subsequent milestones/feedback points will bring these back together. 
 
@@ -66,7 +70,8 @@ After starting a local Android emulator in Android Studio:
 
 ### IDE editing
 
-Syntax highlighting should work in Android Studio nightlies that understand Gradle DCL files.
+Syntax highlighting, code completion and content assist should work in the latest Android Studio nightlies that understand Gradle DCL files.
 
-Code completion and content assist is currently unsupported.
+### Reusable conventions
 
+The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.  Editing these conventions will affect all subprojects.  Similarly, changing one of these values in a subproject will override the shared convention.
