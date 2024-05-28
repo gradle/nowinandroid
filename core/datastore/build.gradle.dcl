@@ -1,10 +1,8 @@
 androidLibrary {
     namespace = "com.google.samples.apps.nowinandroid.core.datastore"
 
-// TODO
-//    defaultConfig {
-//        consumerProguardFiles("consumer-proguard-rules.pro")
-//    }
+    // TODO: We really want to model a list of consumer proguard files here, but can't yet
+    consumerProguardFile = "consumer-proguard-rules.pro"
 
     dependencies {
         api("androidx.datastore:datastore:1.0.0")
