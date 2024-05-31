@@ -28,8 +28,7 @@ plugins {
     id("org.gradle.experimental.android-ecosystem")
 }
 
-// TODO: This is not supported in DCL files yet
-//  rootProject.name = "nowinandroid"
+rootProject.name = "nowinandroid"
 
 dependencyResolutionManagement {
     // TODO: Enum properties are not supported in Declarative DSL right now
@@ -50,16 +49,30 @@ conventions {
         }
 
         kotlinSerialization {
+            enabled = false
             jsonEnabled = true
         }
 
         room {
+            enabled = false
             // TODO: This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
             schemaDirectory = "schemas"
         }
 
+        protobuf {
+            enabled = false
+
+            version = "3.25.2"
+            generatedRootDir = "generated/source/proto"
+
+            dependencies {
+                protoc("com.google.protobuf:protoc:3.25.2") // TODO: How to use to the same version here without duplication?
+            }
+        }
+
         testing {
             jacoco {
+                enabled = false
                 version = "0.8.7"
             }
 
