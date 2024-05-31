@@ -11,9 +11,12 @@ The [settings file](settings.gradle.dcl) applies a new "Android ecosystem plugin
 Converted subprojects:
 - [`:core:common`](core/common/build.gradle.dcl)
 - [`:core:data`](core/data/build.gradle.dcl)
-- [`:core:domain`](core/domain/build.gradle.dcl)
-- [`:core:database`](core/database/build.gradle.dcl)
 - [`:core:data-test`](core/data-test/build.gradle.dcl)
+- [`:core:database`](core/database/build.gradle.dcl)
+- [`:core:datastore`](core/datastore/build.gradle.dcl)
+- [`:core:datastore-proto`](core/datastore-proto/build.gradle.dcl)
+- [`:core:domain`](core/domain/build.gradle.dcl)
+- [`:feature:bookmarks`](feature/bookmarks/build.gradle.dcl)
 
 The `androidLibrary` software type exposes [several configuration options](https://github.com/gradle/declarative-gradle/blob/main/unified-prototype/unified-plugin/plugin-android/src/main/java/org/gradle/api/experimental/android/library/AndroidLibrary.java) and dependencies. Test related configuration mimics the existing Android extension for now. 
 
