@@ -74,4 +74,11 @@ Syntax highlighting, code completion and content assist should work in the lates
 
 ### Reusable conventions
 
-The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.  Editing these conventions will affect all subprojects.  Similarly, changing one of these values in a subproject will override the shared convention.
+The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.  
+Editing these conventions will affect all subprojects.  
+Similarly, changing one of these values in a subproject will override the shared convention.
+
+> **NOTE:** In order to avoid applying all configuration from nested blocks such as `kotlinSerialization` or `room` to subprojects
+> where this functionality is unnecessary and perhaps build-breaking, we are using an `enabled=false` flag to **SIMULATE** defining
+> a convention without automatically applying it.  This is **TEMPORARY WORKAROUND** which will ba addressed soon and should not
+> be seen as a pattern to copy.

@@ -49,10 +49,12 @@ conventions {
         }
 
         kotlinSerialization {
+            enabled = false
             jsonEnabled = true
         }
 
         room {
+            enabled = false
             // TODO: This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
             schemaDirectory = "schemas"
         }
@@ -70,6 +72,7 @@ conventions {
 
         testing {
             jacoco {
+                enabled = false
                 version = "0.8.7"
             }
 
