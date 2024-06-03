@@ -18,13 +18,13 @@ import com.google.samples.apps.nowinandroid.NiaBuildType
 plugins {
     alias(libs.plugins.nowinandroid.android.application)
     alias(libs.plugins.nowinandroid.android.application.compose)
-    alias(libs.plugins.nowinandroid.android.application.flavors)
+    alias(libs.plugins.nowinandroid.android.application.flavors) // TODO:DG
     alias(libs.plugins.nowinandroid.android.application.jacoco)
     alias(libs.plugins.nowinandroid.android.hilt)
-    alias(libs.plugins.nowinandroid.android.application.firebase)
-    id("com.google.android.gms.oss-licenses-plugin")
-    alias(libs.plugins.baselineprofile)
-    alias(libs.plugins.roborazzi)
+    alias(libs.plugins.nowinandroid.android.application.firebase) // TODO:DG
+    id("com.google.android.gms.oss-licenses-plugin") // TODO:DG
+    alias(libs.plugins.baselineprofile) // TODO:DG
+    alias(libs.plugins.roborazzi) // TODO:DG
 }
 
 android {
@@ -35,7 +35,7 @@ android {
 
         // Custom test runner to set up Hilt dependency graph
         testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
-        vectorDrawables {
+        vectorDrawables { // TODO:DG
             useSupportLibrary = true
         }
     }
