@@ -156,7 +156,7 @@ android-application = { id = "com.android.application" }
 android-library = { id = "com.android.library" }
 android-test = { id = "com.android.test" }
 baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark"}
-dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
+dependencyGuard = { id = "com.dropbox.dependency-guard" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
 gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
