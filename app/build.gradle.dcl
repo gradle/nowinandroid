@@ -121,6 +121,7 @@ androidApplication {
         }
 
         jacoco {}
+        roborazzi {}
     }
 
     // TODO: Declarative DSL - Packaging

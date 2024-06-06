@@ -166,7 +166,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization" }
 ksp = { id = "com.google.devtools.ksp" }
 module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "moduleGraph" }
 protobuf = { id = "com.google.protobuf" }
-roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
+roborazzi = { id = "io.github.takahirom.roborazzi" }
 room = { id = "androidx.room" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 
