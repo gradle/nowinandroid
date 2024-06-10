@@ -21,7 +21,7 @@ plugins {
     alias(libs.plugins.nowinandroid.android.application.flavors) // TODO:DG
     alias(libs.plugins.nowinandroid.android.application.jacoco)
     alias(libs.plugins.nowinandroid.android.hilt)
-    alias(libs.plugins.nowinandroid.android.application.firebase) // TODO:DG
+    alias(libs.plugins.nowinandroid.android.application.firebase)
     id("com.google.android.gms.oss-licenses-plugin") // TODO:DG
     alias(libs.plugins.baselineprofile) // TODO:DG
     alias(libs.plugins.roborazzi)

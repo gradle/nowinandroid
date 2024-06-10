@@ -44,6 +44,15 @@ androidApplication {
     compose {}
     hilt {}
 
+    firebase {
+        version = "32.4.0"
+
+        // Disable the Crashlytics mapping file upload. This feature should only be
+        // enabled if a Firebase backend is available and configured in
+        // google-services.json.
+        mappingFileUploadEnabled = false
+    }
+
     // TODO: Declarative DSL - BaselineProfile
 //    baselineProfile {
 //        // Don't build on every iteration of a full assemble.
@@ -89,6 +98,16 @@ androidApplication {
 
             // TODO: Declarative DSL - BaselineProfile
             // baselineProfile.automaticGenerationDuringBuild = true
+
+            // TODO: Declarative DSL - Why is this necessary?  Without it :app:compileDemoReleaseUnitTestKotlin
+            // Can't find deps from the ui-test-hilt-manifest project.  But nowhere in the original
+            // build were those deps added, except to debugImplementation.  What is the configuration
+            // hierarchy in NiA, does the configuration used for this RELEASE compilation classpath
+            // somehow extend the DEBUG compilation classpath?
+            dependencies {
+                implementation("androidx.compose.ui:ui-test-manifest")
+                implementation(project(":ui-test-hilt-manifest"))
+            }
         }
     }
 
