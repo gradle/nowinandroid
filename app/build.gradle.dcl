@@ -43,6 +43,7 @@ androidApplication {
 
     compose {}
     hilt {}
+    flavors {}
 
     firebase {
         version = "32.4.0"
