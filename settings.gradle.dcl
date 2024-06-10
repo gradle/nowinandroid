@@ -26,6 +26,7 @@ pluginManagement {
 
 plugins {
     id("org.gradle.experimental.android-ecosystem")
+    id("org.gradle.experimental.kmp-ecosystem") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
@@ -43,6 +44,8 @@ conventions {
     androidApplication {
         jdkVersion = 11
         compileSdk = 34
+
+        lint {}
     }
 
     androidLibrary {
@@ -52,6 +55,8 @@ conventions {
         dependencies {
             implementation("androidx.tracing:tracing-ktx:1.3.0-alpha02")
         }
+
+        lint {}
 
         kotlinSerialization {
             enabled = false
@@ -73,6 +78,11 @@ conventions {
             dependencies {
                 protoc("com.google.protobuf:protoc:3.25.2") // TODO: How to use to the same version here without duplication?
             }
+        }
+
+        lint {
+            xmlReport = true
+            checkDependencies = true
         }
 
         testing {
