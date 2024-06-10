@@ -155,7 +155,7 @@ work-testing = { group = "androidx.work", name = "work-testing", version = "2.9.
 android-application = { id = "com.android.application" }
 android-library = { id = "com.android.library" }
 android-test = { id = "com.android.test" }
-baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark"}
+baselineprofile = { id = "androidx.baselineprofile" }
 dependencyGuard = { id = "com.dropbox.dependency-guard" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics" }
 firebase-perf = { id = "com.google.firebase.firebase-perf" }

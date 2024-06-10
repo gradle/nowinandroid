@@ -23,7 +23,7 @@ plugins {
     alias(libs.plugins.nowinandroid.android.hilt)
     alias(libs.plugins.nowinandroid.android.application.firebase)
     id("com.google.android.gms.oss-licenses-plugin")
-    alias(libs.plugins.baselineprofile) // TODO:DG
+    alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
 }
 
@@ -54,7 +54,7 @@ android {
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
             signingConfig = signingConfigs.named("debug").get() // TODO:DG
             // Ensure Baseline Profile is fresh for release builds.
-            baselineProfile.automaticGenerationDuringBuild = true // TODO:DG
+            baselineProfile.automaticGenerationDuringBuild = true
         }
     }
 
@@ -118,7 +118,7 @@ dependencies {
     testImplementation(libs.hilt.android.testing)
     testImplementation(libs.work.testing)
 
-    testDemoImplementation(libs.robolectric) // TODO:DG
+    testDemoImplementation(libs.robolectric)
     testDemoImplementation(libs.roborazzi)
     testDemoImplementation(projects.core.screenshotTesting)
 
@@ -130,10 +130,10 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(libs.hilt.android.testing)
 
-    baselineProfile(projects.benchmarks) // TODO:DG
+    baselineProfile(projects.benchmarks)
 }
 
-baselineProfile { // TODO:DG
+baselineProfile {
     // Don't build on every iteration of a full assemble.
     // Instead enable generation directly for the release build variant.
     automaticGenerationDuringBuild = false
