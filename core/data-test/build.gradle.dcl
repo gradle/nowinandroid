@@ -7,5 +7,7 @@ androidLibrary {
         implementation("com.google.dagger:hilt-android-testing:2.51")
     }
 
-    hilt {}
+    hilt {
+        enabled = true
+    }
 }

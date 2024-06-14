@@ -26,9 +26,12 @@ androidApplication {
         implementation(project(":core:ui"))
     }
 
-    compose {}
+    compose {
+        enabled = true
+    }
 
     dependencyGuard {
+        enabled = true
         configurationName = "releaseRuntimeClasspath"
     }
 

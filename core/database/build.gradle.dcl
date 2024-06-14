@@ -7,15 +7,21 @@ androidLibrary {
         implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
     }
 
-    room {}
-    hilt {}
+    room {
+        enabled = true
+    }
+    hilt {
+        enabled = true
+    }
 
     testing {
         dependencies {
             androidImplementation(project(":core:testing"))
         }
 
-        jacoco {}
+        jacoco {
+            enabled = true
+        }
     }
 }
 

@@ -5,9 +5,12 @@ androidLibrary {
         implementation(project(":core:data"))
     }
 
-    feature {}
+    feature {
+        enabled = true
+    }
 
     compose {
+        enabled = true
         stabilityConfigurationFilePath = "/compose_compiler_config.conf"
         experimentalStrongSkipping = true
     }

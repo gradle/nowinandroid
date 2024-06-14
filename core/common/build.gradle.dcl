@@ -1,7 +1,9 @@
 androidLibrary {
     namespace = "com.google.samples.apps.nowinandroid.core.common"
 
-    hilt {}
+    hilt {
+        enabled = true
+    }
 
     testing {
         dependencies {

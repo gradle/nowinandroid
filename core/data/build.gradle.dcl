@@ -11,8 +11,12 @@ androidLibrary {
         implementation(project(":core:notifications"))
     }
 
-    hilt {}
-    kotlinSerialization {}
+    hilt {
+        enabled = true
+    }
+    kotlinSerialization {
+        enabled = true
+    }
 
     testing {
         dependencies {
@@ -22,7 +26,9 @@ androidLibrary {
             implementation(project(":core:network"))
         }
 
-        jacoco {}
+        jacoco {
+            enabled = true
+        }
 
         testOptions {
             includeAndroidResources = true

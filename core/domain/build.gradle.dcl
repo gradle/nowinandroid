@@ -13,6 +13,8 @@ androidLibrary {
             implementation(project(":core:testing"))
         }
 
-        jacoco {}
+        jacoco {
+            enabled = true
+        }
     }
 }

@@ -12,7 +12,9 @@ androidLibrary {
         implementation(project(":core:common"))
     }
 
-    hilt {}
+    hilt {
+        enabled = true
+    }
 
     testing {
         dependencies {
@@ -24,6 +26,8 @@ androidLibrary {
             returnDefaultValues = true
         }
 
-        jacoco {}
+        jacoco {
+            enabled = true
+        }
     }
 }
