@@ -40,6 +40,11 @@ dependencyResolutionManagement {
 }
 
 conventions {
+    androidApplication {
+        jdkVersion = 11
+        compileSdk = 34
+    }
+
     androidLibrary {
         jdkVersion = 11
         compileSdk = 34
