@@ -155,18 +155,18 @@ work-testing = { group = "androidx.work", name = "work-testing", version = "2.9.
 android-application = { id = "com.android.application" }
 android-library = { id = "com.android.library" }
 android-test = { id = "com.android.test" }
-baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark"}
+baselineprofile = { id = "androidx.baselineprofile" }
 dependencyGuard = { id = "com.dropbox.dependency-guard" }
-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
-firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
-gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics" }
+firebase-perf = { id = "com.google.firebase.firebase-perf" }
+gms = { id = "com.google.gms.google-services" }
 hilt = { id = "com.google.dagger.hilt.android" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization" }
 ksp = { id = "com.google.devtools.ksp" }
 module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "moduleGraph" }
 protobuf = { id = "com.google.protobuf" }
-roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
+roborazzi = { id = "io.github.takahirom.roborazzi" }
 room = { id = "androidx.room" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 
