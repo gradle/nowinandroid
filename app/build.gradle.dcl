@@ -39,12 +39,21 @@ androidApplication {
         implementation("io.coil-kt:coil:2.6.0")
     }
 
-    compose {}
-    hilt {}
-    flavors {}
-    licenses {}
+    compose {
+        enabled = true
+    }
+    hilt {
+        enabled = true
+    }
+    flavors {
+        enabled = true
+    }
+    licenses {
+        enabled = true
+    }
 
     firebase {
+        enabled = true
         version = "32.4.0"
 
         // Disable the Crashlytics mapping file upload. This feature should only be
@@ -54,6 +63,8 @@ androidApplication {
     }
 
     baselineProfile {
+        enabled = true
+
         // Don't build on every iteration of a full assemble.
         // Instead enable generation directly for the release build variant.
         automaticGenerationDuringBuild = false
@@ -64,6 +75,7 @@ androidApplication {
     }
 
     dependencyGuard {
+        enabled = true
         configurationName = "prodReleaseRuntimeClasspath"
     }
 
@@ -144,8 +156,12 @@ androidApplication {
             includeAndroidResources = true
         }
 
-        jacoco {}
-        roborazzi {}
+        jacoco {
+            enabled = true
+        }
+        roborazzi {
+            enabled = true
+        }
     }
 
     // TODO:DG - Packaging
