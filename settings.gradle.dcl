@@ -40,7 +40,7 @@ dependencyResolutionManagement {
     }
 }
 
-conventions {
+defaults {
     androidApplication {
         jdkVersion = 11
         compileSdk = 34
