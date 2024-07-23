@@ -20,7 +20,7 @@ Converted subprojects:
 
 The `androidLibrary` software type exposes [several configuration options](https://github.com/gradle/declarative-gradle/blob/main/unified-prototype/unified-plugin/plugin-android/src/main/java/org/gradle/api/experimental/android/library/AndroidLibrary.java) and dependencies. Test related configuration mimics the existing Android extension for now. 
 
-The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.
+The [settings file](settings.gradle.dcl) contains several shared model defaults that are applied to all subprojects with an `androidLibrary` software type.
 
 Syntax highlighting, code completion and content assist are limited to the latest nightly for Android Studio that understands Gradle DCL files.
 
@@ -75,13 +75,14 @@ After starting a local Android emulator in Android Studio:
 
 Syntax highlighting, code completion and content assist should work in the latest Android Studio nightlies that understand Gradle DCL files.
 
-### Reusable conventions
+### Shared model defaults
 
-The [settings file](settings.gradle.dcl) contains several shared conventions that are applied to all subprojects with an `androidLibrary` software type.  
-Editing these conventions will affect all subprojects.  
-Similarly, changing one of these values in a subproject will override the shared convention.
+The [settings file](settings.gradle.dcl) contains several shared defaults that are applied to all subprojects with an `androidLibrary` software type.  
+The default values configured here are applied to the `androidLibrary` model whenever this software type is added to a subproject.
+Editing these defaults will affect all subprojects.  
+Similarly, changing one of these values in a subproject will override the shared default.
 
 > **NOTE:** In order to avoid applying all configuration from nested blocks such as `kotlinSerialization` or `room` to subprojects
 > where this functionality is unnecessary and perhaps build-breaking, we are using an `enabled=false` flag to **SIMULATE** defining
-> a convention without automatically applying it.  This is **TEMPORARY WORKAROUND** which will ba addressed soon and should not
+> a model default without automatically applying it.  This is **TEMPORARY WORKAROUND** which will ba addressed soon and should not
 > be seen as a pattern to copy.
