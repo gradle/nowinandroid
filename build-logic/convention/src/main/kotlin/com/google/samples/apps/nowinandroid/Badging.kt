@@ -41,6 +41,7 @@ import org.gradle.language.base.plugins.LifecycleBasePlugin
 import org.gradle.process.ExecOperations
 import java.io.File
 import javax.inject.Inject
+import org.gradle.kotlin.dsl.assign
 
 @CacheableTask
 abstract class GenerateBadgingTask : DefaultTask() {
