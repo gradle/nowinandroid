@@ -156,6 +156,7 @@ android-application = { id = "com.android.application" }
 android-library = { id = "com.android.library" }
 android-test = { id = "com.android.test" }
 baselineprofile = { id = "androidx.baselineprofile" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose" }
 dependencyGuard = { id = "com.dropbox.dependency-guard" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics" }
 firebase-perf = { id = "com.google.firebase.firebase-perf" }
