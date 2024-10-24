@@ -1,15 +1,18 @@
 androidLibrary {
     namespace = "com.google.samples.apps.nowinandroid.core.designsystem"
 
+    compose {
+        enabled = true
+    }
+
     dependencies {
         lintPublish(project(":lint"))
 
         api("androidx.compose.foundation:foundation")
         api("androidx.compose.foundation:foundation-layout")
-        api("androidx.compose.material:material-icons-extended")
-        api("androidx.compose.material3:material3")
+        api("androidx.compose.material:material-icons-extended:1.6.3")
+        api("androidx.compose.material3:material3:1.2.1")
         api("androidx.compose.runtime:runtime")
-        api("androidx.compose.ui:ui-util")
 
         implementation("io.coil-kt:coil-compose:2.6.0")
     }
@@ -25,7 +28,7 @@ androidLibrary {
             implementation("org.robolectric:robolectric:4.11.1")
             implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
 
-            implementation(project(":core:screenshotTesting"))
+            implementation(project(":core:screenshot-testing"))
             implementation(project(":core:testing"))
 
             androidImplementation("androidx.compose.ui:ui-test-junit4")
