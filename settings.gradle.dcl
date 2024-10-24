@@ -25,8 +25,8 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem") version "0.1.14"
-    id("org.gradle.experimental.kmp-ecosystem")  version "0.1.14" // For the Kotlin JVM Library used by :lint
+    id("org.gradle.experimental.android-ecosystem").version("0.1.15")
+    id("org.gradle.experimental.kmp-ecosystem").version("0.1.15") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
@@ -41,14 +41,14 @@ dependencyResolutionManagement {
 
 defaults {
     androidApplication {
-        jdkVersion = 11
+        jdkVersion = 17
         compileSdk = 34
 
         lint {}
     }
 
     androidLibrary {
-        jdkVersion = 11
+        jdkVersion = 17
         compileSdk = 34
 
         dependencies {
