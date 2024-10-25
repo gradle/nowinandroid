@@ -25,8 +25,8 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem").version("0.1.15")
-    id("org.gradle.experimental.kmp-ecosystem").version("0.1.15") // For the Kotlin JVM Library used by :lint
+    id("org.gradle.experimental.android-ecosystem").version("0.1.16")
+    id("org.gradle.experimental.kmp-ecosystem").version("0.1.16") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
