@@ -169,7 +169,7 @@ module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "module
 protobuf = { id = "com.google.protobuf" }
 roborazzi = { id = "io.github.takahirom.roborazzi" }
 room = { id = "androidx.room" }
-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
+secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin" }
 
 # Plugins defined by this project
 nowinandroid-android-application = { id = "nowinandroid.android.application", version = "unspecified" }
