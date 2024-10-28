@@ -16,7 +16,9 @@
 
 pluginManagement {
     includeBuild("build-logic")
-    //includeBuild("declarative-gradle/unified-prototype/unified-plugin")
+    // If you need to work with the latest, unpublished version of the Declrative Gradle prototype plugin
+    // check it out into a `declarative-gradle` subdirectory (inside the root of this project) and uncomment the following line:
+    // includeBuild("declarative-gradle/unified-prototype/unified-plugin")
     repositories {
         google()
         mavenCentral()
@@ -25,8 +27,8 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem").version("0.1.16")
-    id("org.gradle.experimental.kmp-ecosystem").version("0.1.16") // For the Kotlin JVM Library used by :lint
+    id("org.gradle.experimental.android-ecosystem").version("0.1.17")
+    id("org.gradle.experimental.kmp-ecosystem").version("0.1.17") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
