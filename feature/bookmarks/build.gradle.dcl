@@ -19,7 +19,6 @@ androidLibrary {
         dependencies {
             implementation(project(":core:testing"))
             androidImplementation(project(":core:testing"))
-            androidImplementation("androidx-compose-ui-test:androidx-compose-ui-testManifest")
         }
     }
 }
