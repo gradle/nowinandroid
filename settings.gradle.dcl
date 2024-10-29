@@ -46,7 +46,9 @@ defaults {
         jdkVersion = 17
         compileSdk = 34
 
-        lint {}
+        lint {
+            enabled = true
+        }
     }
 
     androidLibrary {
@@ -57,8 +59,6 @@ defaults {
             implementation("androidx.tracing:tracing-ktx:1.3.0-alpha02")
         }
 
-        lint {}
-
         kotlinSerialization {
             enabled = false
             jsonEnabled = true
@@ -66,7 +66,7 @@ defaults {
 
         room {
             enabled = false
-            // TODO: This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
+            // TODO:DCL This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
             schemaDirectory = "schemas"
         }
 
@@ -77,11 +77,12 @@ defaults {
             generatedRootDir = "generated/source/proto"
 
             dependencies {
-                protoc("com.google.protobuf:protoc:3.25.2") // TODO: How to use to the same version here without duplication?
+                protoc("com.google.protobuf:protoc:3.25.2") // TODO:DCL How to use to the same version here without duplication?
             }
         }
 
         lint {
+            enabled = true
             xmlReport = true
             checkDependencies = true
         }
