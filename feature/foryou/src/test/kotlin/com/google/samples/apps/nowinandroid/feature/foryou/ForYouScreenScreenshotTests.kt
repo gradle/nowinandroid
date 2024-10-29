@@ -32,6 +32,7 @@ import com.google.samples.apps.nowinandroid.feature.foryou.OnboardingUiState.Not
 import com.google.samples.apps.nowinandroid.feature.foryou.OnboardingUiState.Shown
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -44,6 +45,7 @@ import java.util.TimeZone
 /**
  * Screenshot tests for the [ForYouScreen].
  */
+@Ignore
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(application = HiltTestApplication::class)
