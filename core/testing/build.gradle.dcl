@@ -10,6 +10,7 @@ androidLibrary {
     }
 
     dependencies {
+        // TODO:DCL - api(kotlin("test"))
         api("androidx.compose.ui:ui-test-junit4:1.7.0-alpha06")
 
         api(project(":core:analytics"))

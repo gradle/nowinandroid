@@ -5,15 +5,12 @@ androidLibrary {
         enabled = true
     }
 
-    compose {
-        enabled = true
-    }
-
     dependencies {
         api(project(":core:model"))
 
         implementation(project(":core:common"))
 
-        compileOnly("androidx.compose.runtime:runtime")
+        // compileOnly(platform(libs.androidx.compose.bom)) TODO:DCL - This was a platform dep
+        compileOnly("androidx.compose.runtime:runtime:1.6.3") // TODO:DCL - This is the version from the platform
     }
 }

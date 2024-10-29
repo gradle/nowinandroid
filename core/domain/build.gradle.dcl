@@ -2,19 +2,19 @@ androidLibrary {
     namespace = "com.google.samples.apps.nowinandroid.core.domain"
 
     dependencies {
-        implementation("javax.inject:javax.inject:1")
-
         api(project(":core:data"))
         api(project(":core:model"))
+
+        implementation("javax.inject:javax.inject:1")
     }
 
     testing {
-        dependencies {
-            implementation(project(":core:testing"))
-        }
-
         jacoco {
             enabled = true
+        }
+
+        dependencies {
+            implementation(project(":core:testing"))
         }
     }
 }

@@ -20,6 +20,10 @@ androidLibrary {
         jacoco {
             enabled = true
         }
+
+        testOptions {
+            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
         
         dependencies {
             androidImplementation(project(":core:testing"))

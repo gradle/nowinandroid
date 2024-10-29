@@ -13,11 +13,20 @@ androidLibrary {
         api("androidx.compose.material:material-icons-extended:1.6.3")
         api("androidx.compose.material3:material3:1.2.1")
         api("androidx.compose.runtime:runtime")
+        api("androidx.compose.ui:ui-util")
 
         implementation("io.coil-kt:coil-compose:2.6.0")
     }
 
     testing {
+        jacoco {
+            enabled = true
+        }
+
+        roborazzi {
+            enabled = true
+        }
+
         testOptions {
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }

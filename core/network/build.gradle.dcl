@@ -29,6 +29,10 @@ androidLibrary {
     }
 
     testing {
+        jacoco {
+            enabled = true
+        }
+
         testOptions {
             includeAndroidResources = true
         }

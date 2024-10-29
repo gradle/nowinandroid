@@ -1,6 +1,13 @@
 androidLibrary {
     namespace = "com.google.samples.apps.nowinandroid.core.data"
 
+    hilt {
+        enabled = true
+    }
+    kotlinSerialization {
+        enabled = true
+    }
+
     dependencies {
         api(project(":core:common"))
         api(project(":core:database"))
@@ -11,21 +18,8 @@ androidLibrary {
         implementation(project(":core:notifications"))
     }
 
-    hilt {
-        enabled = true
-    }
-    kotlinSerialization {
-        enabled = true
-    }
 
     testing {
-        dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-            implementation(project(":core:datastore-test"))
-            implementation(project(":core:testing"))
-            implementation(project(":core:network"))
-        }
-
         jacoco {
             enabled = true
         }
@@ -33,6 +27,12 @@ androidLibrary {
         testOptions {
             includeAndroidResources = true
             returnDefaultValues = true
+        }
+
+        dependencies {
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+            implementation(project(":core:datastore-test"))
+            implementation(project(":core:testing"))
         }
     }
 }
