@@ -165,6 +165,14 @@ androidApplication {
             androidImplementation("androidx.navigation:navigation-testing:2.7.4")
             androidImplementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
             androidImplementation("com.google.dagger:hilt-android-testing:2.51")
+
+            // TODO:DCL - Adding this to fix:
+            // Classes that weren't resolved:
+            //> androidx.compose.animation.tooling.ComposeAnimatedProperty
+            //> com.google.common.util.concurrent.ListenableFuture
+            androidImplementation("com.google.guava:listenablefuture:1.0")
+            androidImplementation("androidx.compose.animation:animation:1.6.3")
+            androidImplementation("androidx.window.extensions.core:core:1.0.0")
         }
     }
 
