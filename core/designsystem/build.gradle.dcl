@@ -25,7 +25,7 @@ androidLibrary {
         dependencies {
             implementation("androidx.compose.ui:ui-test-junit4")
             implementation("com.google.dagger:hilt-android-testing:2.51")
-            implementation("org.robolectric:robolectric:4.11.1")
+            implementation("org.robolectric:robolectric:4.12.2")
             implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
 
             implementation(project(":core:screenshot-testing"))

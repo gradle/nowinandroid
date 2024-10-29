@@ -14,7 +14,7 @@ androidLibrary {
 
         implementation("androidx.activity:activity-compose:1.8.0")
         implementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha06")
-        implementation("org.robolectric:robolectric:4.11.1")
+        implementation("org.robolectric:robolectric:4.12.2")
 
         implementation(project(":core:common"))
         implementation(project(":core:designsystem"))
