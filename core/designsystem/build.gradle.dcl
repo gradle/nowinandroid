@@ -32,6 +32,9 @@ androidLibrary {
         }
 
         dependencies {
+            // TODO:DCL - Not sure why this is needed here
+            implementation("androidx.compose.ui:ui-test-manifest:1.7.0-alpha05")
+
             implementation("androidx.compose.ui:ui-test-junit4")
             implementation("com.google.dagger:hilt-android-testing:2.51")
             implementation("org.robolectric:robolectric:4.12.2")
