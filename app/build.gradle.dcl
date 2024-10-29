@@ -4,48 +4,16 @@ androidApplication {
     applicationId = "com.google.samples.apps.nowinandroid"
     versionCode = 8
     versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
+
     vectorDrawablesUseSupportLibrary = true
-
-    dependencies {
-        implementation(project(":feature:interests"))
-        implementation(project(":feature:foryou"))
-        implementation(project(":feature:bookmarks"))
-        implementation(project(":feature:topic"))
-        implementation(project(":feature:search"))
-        implementation(project(":feature:settings"))
-
-        implementation(project(":core:common"))
-        implementation(project(":core:ui"))
-        implementation(project(":core:designsystem"))
-        implementation(project(":core:data"))
-        implementation(project(":core:model"))
-        implementation(project(":core:analytics"))
-        implementation(project(":sync:work"))
-
-        implementation("androidx.activity:activity-compose:1.8.0")
-        implementation("androidx.compose.material3.adaptive:adaptive:1.0.0-alpha10")
-        implementation("androidx.compose.material3.adaptive:adaptive-layout:1.0.0-alpha10")
-        implementation("androidx.compose.material3.adaptive:adaptive-navigation:1.0.0-alpha10")
-        implementation("androidx.compose.material3:material3-window-size-class")
-        implementation("androidx.core:core-ktx:1.12.0")
-        implementation("androidx.core:core-splashscreen:1.0.1")
-        implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-        implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
-        implementation("androidx.navigation:navigation-compose:2.7.4")
-        implementation("androidx.profileinstaller:profileinstaller:1.3.1")
-        implementation("androidx.tracing:tracing-ktx:1.0.0-beta01")
-        implementation("androidx.window:window-core:1.3.0-alpha03")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.8.0")
-        implementation("io.coil-kt:coil:2.6.0")
-    }
 
     compose {
         enabled = true
     }
-    hilt {
+    flavors {
         enabled = true
     }
-    flavors {
+    hilt {
         enabled = true
     }
     licenses {
@@ -77,6 +45,38 @@ androidApplication {
     dependencyGuard {
         enabled = true
         configurationName = "prodReleaseRuntimeClasspath"
+    }
+
+    dependencies {
+        implementation(project(":feature:interests"))
+        implementation(project(":feature:foryou"))
+        implementation(project(":feature:bookmarks"))
+        implementation(project(":feature:topic"))
+        implementation(project(":feature:search"))
+        implementation(project(":feature:settings"))
+
+        implementation(project(":core:common"))
+        implementation(project(":core:ui"))
+        implementation(project(":core:designsystem"))
+        implementation(project(":core:data"))
+        implementation(project(":core:model"))
+        implementation(project(":core:analytics"))
+        implementation(project(":sync:work"))
+
+        implementation("androidx.activity:activity-compose:1.8.0")
+        implementation("androidx.compose.material3.adaptive:adaptive:1.0.0-alpha10")
+        implementation("androidx.compose.material3.adaptive:adaptive-layout:1.0.0-alpha10")
+        implementation("androidx.compose.material3.adaptive:adaptive-navigation:1.0.0-alpha10")
+        implementation("androidx.compose.material3:material3-window-size-class")
+        implementation("androidx.core:core-ktx:1.12.0")
+        implementation("androidx.core:core-splashscreen:1.0.1")
+        implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+        implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+        implementation("androidx.navigation:navigation-compose:2.7.4")
+        implementation("androidx.profileinstaller:profileinstaller:1.3.1")
+        implementation("androidx.tracing:tracing-ktx:1.3.0-alpha02")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.8.0")
+        implementation("io.coil-kt:coil:2.6.0")
     }
 
     buildTypes {
@@ -129,13 +129,29 @@ androidApplication {
     }
 
     testing {
+        jacoco {
+            enabled = true
+        }
+
+        roborazzi {
+            enabled = true
+        }
+
+        testOptions {
+            // TODO:DCL - This was only for unit tests, we need to model different types of tests
+            includeAndroidResources = true
+
+            testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        }
+
         dependencies {
             implementation(project(":core:data-test"))
             implementation(project(":core:testing"))
-            implementation(project(":core:datastore-test"))
-            implementation(project(":sync:sync-test"))
-
+            implementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
             implementation("com.google.dagger:hilt-android-testing:2.51")
+
+            // TODO:DCL - Adding this leads to java.lang.IllegalStateException: WorkManager is not initialized properly.
+            // implementation("androidx.work:work-testing:2.9.0")
 
             // TODO:DCL - These were originally only dependencies of testDemoImplementation, but we haven't modeled Product Flavors yet
             implementation("org.robolectric:robolectric:4.12.2")
@@ -149,18 +165,6 @@ androidApplication {
             androidImplementation("androidx.navigation:navigation-testing:2.7.4")
             androidImplementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
             androidImplementation("com.google.dagger:hilt-android-testing:2.51")
-        }
-
-        testOptions {
-            // TODO:DCL - This was only for unit tests, we need to model different types of tests
-            includeAndroidResources = true
-        }
-
-        jacoco {
-            enabled = true
-        }
-        roborazzi {
-            enabled = true
         }
     }
 
