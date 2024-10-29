@@ -147,7 +147,7 @@ androidApplication {
             androidImplementation(project(":core:datastore-test"))
             androidImplementation("androidx.test.espresso:espresso-core:3.5.1")
             androidImplementation("androidx.navigation:navigation-testing:2.7.4")
-            androidImplementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha06")
+            androidImplementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
             androidImplementation("com.google.dagger:hilt-android-testing:2.51")
         }
 

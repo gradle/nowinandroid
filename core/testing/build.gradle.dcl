@@ -11,7 +11,7 @@ androidLibrary {
 
     dependencies {
         api("org.jetbrains.kotlin:kotlin-test:1.9.23")
-        api("androidx.compose.ui:ui-test-junit4:1.7.0-alpha06")
+        api("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
 
         api(project(":core:analytics"))
         api(project(":core:data"))
