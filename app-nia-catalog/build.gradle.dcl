@@ -12,7 +12,7 @@ androidApplication {
         value = "demo"
     }
 
-    // TODO: DG
+    // TODO:DCL
 //    packaging {
 //        resources {
 //              excludes.add("/META-INF/{AL2.0,LGPL2.1}")
@@ -37,10 +37,10 @@ androidApplication {
 
     buildTypes {
         release {
-            // TODO: Setup Signing config
+            // TODO:DCL Setup Signing config
             // To publish on the Play store a private signing key is required, but to allow anyone
             // who clones the code to sign and run the release variant, use the debug signing key.
-            // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
+            // TODO:DCL Abstract the signing configuration to a separate file to avoid hardcoding this.
             // signingConfig = signingConfigs.named("debug").get()
         }
     }

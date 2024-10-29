@@ -90,7 +90,7 @@ androidApplication {
         }
 
         release {
-            // TODO:DG doesn't support setting this to null
+            // TODO:DCL doesn't support setting this to null
             // Is there any need to explicitly set this to null?
             // applicationIdSuffix = null
 
@@ -105,10 +105,10 @@ androidApplication {
                 name = "proguard-rules.pro"
             }
 
-            // TODO:DG - Skiping converting signing for now
+            // TODO:DCL - Skiping converting signing for now
             // To publish on the Play store a private signing key is required, but to allow anyone
             // who clones the code to sign and run the release variant, use the debug signing key.
-            // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
+            // TODO:DCL Abstract the signing configuration to a separate file to avoid hardcoding this.
             // signingConfig = signingConfigs.named("debug")).get()
 
             baselineProfile {
@@ -116,7 +116,7 @@ androidApplication {
                 automaticGenerationDuringBuild = true
             }
 
-            // TODO:DG - Why is this necessary?  Without it :app:compileDemoReleaseUnitTestKotlin
+            // TODO:DCL - Why is this necessary?  Without it :app:compileDemoReleaseUnitTestKotlin
             // Can't find deps from the ui-test-hilt-manifest project.  But nowhere in the original
             // build were those deps added, except to debugImplementation.  What is the configuration
             // hierarchy in NiA, does the configuration used for this RELEASE compilation classpath
@@ -137,7 +137,7 @@ androidApplication {
 
             implementation("com.google.dagger:hilt-android-testing:2.51")
 
-            // TODO:DG - These were originally only dependencies of testDemoImplementation, but we haven't modeled Product Flavors yet
+            // TODO:DCL - These were originally only dependencies of testDemoImplementation, but we haven't modeled Product Flavors yet
             implementation("org.robolectric:robolectric:4.12.2")
             implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
             implementation(project(":core:screenshot-testing"))
@@ -152,7 +152,7 @@ androidApplication {
         }
 
         testOptions {
-            // TODO:DG - This was only for unit tests, we need to model different types of tests
+            // TODO:DCL - This was only for unit tests, we need to model different types of tests
             includeAndroidResources = true
         }
 
@@ -164,7 +164,7 @@ androidApplication {
         }
     }
 
-    // TODO:DG - Packaging
+    // TODO:DCL - Packaging
 //    packaging {
 //        resources {
 //        excludes.add("/META-INF/{AL2.0,LGPL2.1}")
