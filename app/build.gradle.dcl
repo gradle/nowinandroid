@@ -27,13 +27,13 @@ androidApplication {
         implementation("androidx.compose.material3.adaptive:adaptive-layout:1.0.0-alpha10")
         implementation("androidx.compose.material3.adaptive:adaptive-navigation:1.0.0-alpha10")
         implementation("androidx.compose.material3:material3-window-size-class")
-        implementation("androidx.compose.runtime:runtime-tracing:1.0.0-beta01")
         implementation("androidx.core:core-ktx:1.12.0")
         implementation("androidx.core:core-splashscreen:1.0.1")
         implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
         implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
         implementation("androidx.navigation:navigation-compose:2.7.4")
         implementation("androidx.profileinstaller:profileinstaller:1.3.1")
+        implementation("androidx.tracing:tracing-ktx:1.0.0-beta01")
         implementation("androidx.window:window-core:1.3.0-alpha03")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.8.0")
         implementation("io.coil-kt:coil:2.6.0")
@@ -131,14 +131,13 @@ androidApplication {
     testing {
         dependencies {
             implementation(project(":core:data-test"))
-            implementation(project(":core:testing"))
+            implementation(project(":core:datastore-test"))
             implementation(project(":sync:sync-test"))
-            implementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha06")
+
             implementation("com.google.dagger:hilt-android-testing:2.51")
-            implementation("androidx.work:work-testing:2.9.0")
 
             // TODO:DG - These were originally only dependencies of testDemoImplementation, but we haven't modeled Product Flavors yet
-            implementation("org.robolectric:robolectric:4.11.1")
+            implementation("org.robolectric:robolectric:4.12.2")
             implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
             implementation(project(":core:screenshot-testing"))
 
