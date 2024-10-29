@@ -131,6 +131,7 @@ androidApplication {
     testing {
         dependencies {
             implementation(project(":core:data-test"))
+            implementation(project(":core:testing"))
             implementation(project(":core:datastore-test"))
             implementation(project(":sync:sync-test"))
 
