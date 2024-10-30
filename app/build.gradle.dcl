@@ -77,6 +77,14 @@ androidApplication {
         implementation("androidx.tracing:tracing-ktx:1.3.0-alpha02")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.8.0")
         implementation("io.coil-kt:coil:2.6.0")
+
+        // TODO:DCL - Attempt to fix:
+        /*
+        com.google.samples.apps.nowinandroid.ui.NavigationTest > topLevelDestinations_showSettingsIcon[emulator-5554 - 11] FAILED
+	java.lang.RuntimeException: Cannot create an instance of class com.google.samples.apps.nowinandroid.feature.bookmarks.BookmarksViewModel
+	at androidx.lifecycle.viewmodel.internal.JvmViewModelProviders.createViewModel(JvmViewModelProviders.kt:40)
+	    */
+        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     }
 
     buildTypes {
