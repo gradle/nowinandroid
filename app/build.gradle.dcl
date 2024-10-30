@@ -180,7 +180,7 @@ androidApplication {
             //> com.google.common.util.concurrent.ListenableFuture
             androidImplementation("com.google.guava:listenablefuture:1.0")
             androidImplementation("androidx.compose.animation:animation:1.6.3")
-            androidImplementation("androidx.window.extensions.core:core:1.3.0-alpha03")
+            androidImplementation("androidx.window.extensions.core:core:1.0.0")
         }
     }
 
