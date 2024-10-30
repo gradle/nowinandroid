@@ -44,7 +44,7 @@ dependencyResolutionManagement {
 defaults {
     androidApplication {
         jdkVersion = 17
-        minSdk = 21
+        minSdk = 34
         compileSdk = 34
 
         lint {
@@ -54,7 +54,7 @@ defaults {
 
     androidLibrary {
         jdkVersion = 17
-        minSdk = 21
+        minSdk = 34
         compileSdk = 34
 
         dependencies {
