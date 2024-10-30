@@ -12,20 +12,6 @@ androidApplication {
         value = "demo"
     }
 
-    // TODO:DCL
-//    packaging {
-//        resources {
-//              excludes.add("/META-INF/{AL2.0,LGPL2.1}")
-//        }
-//    }
-
-    dependencies {
-        implementation("androidx.activity:activity-compose:1.8.0")
-
-        implementation(project(":core:designsystem"))
-        implementation(project(":core:ui"))
-    }
-
     compose {
         enabled = true
     }
@@ -33,6 +19,20 @@ androidApplication {
     dependencyGuard {
         enabled = true
         configurationName = "releaseRuntimeClasspath"
+    }
+
+    // TODO:DCL
+    //    packaging {
+    //        resources {
+    //              excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+    //        }
+    //    }
+
+    dependencies {
+        implementation("androidx.activity:activity-compose:1.8.0")
+
+        implementation(project(":core:designsystem"))
+        implementation(project(":core:ui"))
     }
 
     buildTypes {
