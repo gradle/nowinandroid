@@ -77,14 +77,6 @@ androidApplication {
         implementation("androidx.tracing:tracing-ktx:1.3.0-alpha02")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.8.0")
         implementation("io.coil-kt:coil:2.6.0")
-
-        // TODO:DCL - Attempt to fix:
-        /*
-        com.google.samples.apps.nowinandroid.ui.NavigationTest > topLevelDestinations_showSettingsIcon[emulator-5554 - 11] FAILED
-	java.lang.RuntimeException: Cannot create an instance of class com.google.samples.apps.nowinandroid.feature.bookmarks.BookmarksViewModel
-	at androidx.lifecycle.viewmodel.internal.JvmViewModelProviders.createViewModel(JvmViewModelProviders.kt:40)
-	    */
-        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     }
 
     buildTypes {
@@ -156,10 +148,8 @@ androidApplication {
             implementation(project(":core:data-test"))
             implementation(project(":core:testing"))
             implementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
-            implementation("com.google.dagger:hilt-android-testing:2.51")
-
-            // TODO:DCL - Adding this leads to java.lang.IllegalStateException: WorkManager is not initialized properly.
-            // implementation("androidx.work:work-testing:2.9.0")
+            implementation("com.google.dagger:hilt-android-testing:2.52")
+            implementation("androidx.work:work-testing:2.9.0")
 
             // TODO:DCL - These were originally only dependencies of testDemoImplementation, but we haven't modeled Product Flavors yet
             implementation("org.robolectric:robolectric:4.12.2")
@@ -172,15 +162,7 @@ androidApplication {
             androidImplementation("androidx.test.espresso:espresso-core:3.5.1")
             androidImplementation("androidx.navigation:navigation-testing:2.7.4")
             androidImplementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
-            androidImplementation("com.google.dagger:hilt-android-testing:2.51")
-
-            // TODO:DCL - Adding this to fix:
-            // Classes that weren't resolved:
-            //> androidx.compose.animation.tooling.ComposeAnimatedProperty
-            //> com.google.common.util.concurrent.ListenableFuture
-            androidImplementation("com.google.guava:listenablefuture:1.0")
-            androidImplementation("androidx.compose.animation:animation:1.6.3")
-            androidImplementation("androidx.window.extensions.core:core:1.0.0")
+            androidImplementation("com.google.dagger:hilt-android-testing:2.52")
         }
     }
 
