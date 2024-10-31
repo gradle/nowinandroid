@@ -1,8 +1,6 @@
 kotlinJvmLibrary {
     javaVersion = 11
 
-    lint {}
-
     dependencies {
         compileOnly("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
         compileOnly("com.android.tools.lint:lint-api:31.3.0")

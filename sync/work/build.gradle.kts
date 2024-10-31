@@ -41,4 +41,12 @@ dependencies {
     androidTestImplementation(libs.androidx.work.testing)
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(projects.core.testing)
+
+    // TODO:DCL
+    /*
+    Address error:
+    Task :sync:work:compileDemoDebugAndroidTestKotlin
+e: file:///Users/ttresansky/Projects/now-in-android/sync/work/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/sync/workers/SyncWorkerTest.kt:61:38 Cannot access class 'com.google.common.util.concurrent.ListenableFuture'. Check your module classpath for missing or conflicting dependencies.
+     */
+    androidTestImplementation("com.google.guava:guava:31.1-android")
 }

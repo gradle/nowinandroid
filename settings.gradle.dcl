@@ -16,7 +16,9 @@
 
 pluginManagement {
     includeBuild("build-logic")
-    //includeBuild("declarative-gradle/unified-prototype/unified-plugin")
+    // If you need to work with the latest, unpublished version of the Declrative Gradle prototype plugin
+    // check it out into a `declarative-gradle` subdirectory (inside the root of this project) and uncomment the following line:
+    // includeBuild("declarative-gradle/unified-prototype/unified-plugin")
     repositories {
         google()
         mavenCentral()
@@ -25,8 +27,8 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem") version "0.1.14"
-    id("org.gradle.experimental.kmp-ecosystem")  version "0.1.14" // For the Kotlin JVM Library used by :lint
+    id("org.gradle.experimental.android-ecosystem").version("0.1.22")
+    id("org.gradle.experimental.kmp-ecosystem").version("0.1.22") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
@@ -41,21 +43,25 @@ dependencyResolutionManagement {
 
 defaults {
     androidApplication {
-        jdkVersion = 11
+        jdkVersion = 17
+        minSdk = 21
+        targetSdk = 34
         compileSdk = 34
 
-        lint {}
+        lint {
+            enabled = true
+        }
     }
 
     androidLibrary {
-        jdkVersion = 11
+        jdkVersion = 17
+        minSdk = 21
+        targetSdk = 34
         compileSdk = 34
 
         dependencies {
             implementation("androidx.tracing:tracing-ktx:1.3.0-alpha02")
         }
-
-        lint {}
 
         kotlinSerialization {
             enabled = false
@@ -64,7 +70,7 @@ defaults {
 
         room {
             enabled = false
-            // TODO: This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
+            // TODO:DCL This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
             schemaDirectory = "schemas"
         }
 
@@ -75,11 +81,12 @@ defaults {
             generatedRootDir = "generated/source/proto"
 
             dependencies {
-                protoc("com.google.protobuf:protoc:3.25.2") // TODO: How to use to the same version here without duplication?
+                protoc("com.google.protobuf:protoc:3.25.2") // TODO:DCL How to use to the same version here without duplication?
             }
         }
 
         lint {
+            enabled = true
             xmlReport = true
             checkDependencies = true
         }
