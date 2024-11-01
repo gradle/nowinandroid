@@ -43,6 +43,8 @@ androidLibrary {
             implementation(project(":core:screenshot-testing"))
             implementation(project(":core:testing"))
 
+
+            androidImplementation("androidx.compose.ui:ui-test-manifest:1.7.0-alpha05")
             androidImplementation("androidx.compose.ui:ui-test-junit4")
             androidImplementation(project(":core:testing"))
         }
