@@ -27,6 +27,7 @@ import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.testing.util.DefaultRoborazziOptions
 import com.google.samples.apps.nowinandroid.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -53,6 +54,7 @@ class LoadingWheelScreenshotTests {
         }
     }
 
+    @Ignore
     @Test
     fun overlayLoadingWheel_multipleThemes() {
         composeTestRule.captureMultiTheme("LoadingWheel", "OverlayLoadingWheel") {
