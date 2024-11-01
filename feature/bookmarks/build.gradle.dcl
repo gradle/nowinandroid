@@ -8,6 +8,9 @@ androidLibrary {
     feature {
         enabled = true
     }
+    hilt {
+        enabled = true
+    }
 
     compose {
         enabled = true

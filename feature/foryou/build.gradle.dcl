@@ -7,6 +7,9 @@ androidLibrary {
     compose {
         enabled = true
     }
+    hilt {
+        enabled = true
+    }
     
     dependencies {
         implementation("com.google.accompanist:accompanist-permissions:0.34.0")

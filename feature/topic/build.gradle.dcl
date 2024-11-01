@@ -7,6 +7,9 @@ androidLibrary {
     compose {
         enabled = true
     }
+    hilt {
+        enabled = true
+    }
 
     dependencies {
         implementation(project(":core:data"))
