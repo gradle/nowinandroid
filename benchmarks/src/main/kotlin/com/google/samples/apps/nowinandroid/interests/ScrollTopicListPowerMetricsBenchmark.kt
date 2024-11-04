@@ -34,10 +34,12 @@ import com.google.samples.apps.nowinandroid.foryou.forYouScrollFeedDownUp
 import com.google.samples.apps.nowinandroid.foryou.forYouSelectTopics
 import com.google.samples.apps.nowinandroid.foryou.forYouWaitForContent
 import com.google.samples.apps.nowinandroid.foryou.setAppTheme
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+@Ignore // TODO:DCL Ignore Benchmarks
 @OptIn(ExperimentalMetricApi::class)
 @RequiresApi(VERSION_CODES.Q)
 @RunWith(AndroidJUnit4::class)

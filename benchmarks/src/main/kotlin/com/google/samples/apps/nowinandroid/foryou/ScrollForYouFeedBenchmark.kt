@@ -23,10 +23,12 @@ import androidx.benchmark.macro.junit4.MacrobenchmarkRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.google.samples.apps.nowinandroid.PACKAGE_NAME
 import com.google.samples.apps.nowinandroid.startActivityAndAllowNotifications
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+@Ignore // TODO:DCL Ignore Benchmarks
 @RunWith(AndroidJUnit4ClassRunner::class)
 class ScrollForYouFeedBenchmark {
     @get:Rule

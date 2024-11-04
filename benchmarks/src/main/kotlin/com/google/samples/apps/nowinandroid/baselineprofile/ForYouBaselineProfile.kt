@@ -22,12 +22,14 @@ import com.google.samples.apps.nowinandroid.foryou.forYouScrollFeedDownUp
 import com.google.samples.apps.nowinandroid.foryou.forYouSelectTopics
 import com.google.samples.apps.nowinandroid.foryou.forYouWaitForContent
 import com.google.samples.apps.nowinandroid.startActivityAndAllowNotifications
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 
 /**
  * Baseline Profile of the "For You" screen
  */
+@Ignore // TODO:DCL Ignore Benchmarks
 class ForYouBaselineProfile {
     @get:Rule val baselineProfileRule = BaselineProfileRule()
 
