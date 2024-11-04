@@ -15,7 +15,6 @@
  */
 
 pluginManagement {
-    includeBuild("build-logic")
     // If you need to work with the latest, unpublished version of the Declrative Gradle prototype plugin
     // check it out into a `declarative-gradle` subdirectory (inside the root of this project) and uncomment the following line:
     // includeBuild("declarative-gradle/unified-prototype/unified-plugin")
@@ -27,8 +26,8 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem").version("0.1.22")
-    id("org.gradle.experimental.kmp-ecosystem").version("0.1.22") // For the Kotlin JVM Library used by :lint
+    id("org.gradle.experimental.android-ecosystem").version("0.1.27")
+    id("org.gradle.experimental.kmp-ecosystem").version("0.1.27") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
@@ -101,6 +100,12 @@ defaults {
                 testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
             }
         }
+    }
+
+    androidTest {
+        jdkVersion = 17
+        minSdk = 28
+        compileSdk = 34
     }
 }
 

@@ -22,6 +22,8 @@ androidLibrary {
         dependencies {
             implementation(project(":core:testing"))
             androidImplementation(project(":core:testing"))
+
+            androidImplementation("androidx.compose.ui:ui-test-manifest:1.7.0-alpha05")
         }
     }
 }

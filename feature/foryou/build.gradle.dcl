@@ -34,6 +34,7 @@ androidLibrary {
             // TODO:DCL - Was just for Demo flavor
             implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
 
+            androidImplementation("androidx.compose.ui:ui-test-manifest:1.7.0-alpha05")
             androidImplementation(project(":core:testing"))
         }
     }

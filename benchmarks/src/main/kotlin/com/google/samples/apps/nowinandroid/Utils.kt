@@ -21,7 +21,6 @@ import androidx.test.uiautomator.Direction
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiObject2
 import androidx.test.uiautomator.Until
-import com.google.samples.apps.nowinandroid.benchmarks.BuildConfig
 import java.io.ByteArrayOutputStream
 
 /**
@@ -29,7 +28,7 @@ import java.io.ByteArrayOutputStream
  */
 val PACKAGE_NAME = buildString {
     append("com.google.samples.apps.nowinandroid")
-    append(BuildConfig.APP_FLAVOR_SUFFIX)
+    // append(BuildConfig.APP_FLAVOR_SUFFIX) // TODO:DCL - no flavors here
 }
 
 fun UiDevice.flingElementDownUp(element: UiObject2) {
