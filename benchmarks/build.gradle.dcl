@@ -1,8 +1,6 @@
 androidTest {
     namespace = "com.google.samples.apps.nowinandroid.benchmarks"
 
-    minSdk = 28
-    compileSdk = 34
     buildConfig = true
 
     baselineProfile {
