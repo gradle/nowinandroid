@@ -15,7 +15,6 @@
  */
 
 pluginManagement {
-    includeBuild("build-logic")
     // If you need to work with the latest, unpublished version of the Declrative Gradle prototype plugin
     // check it out into a `declarative-gradle` subdirectory (inside the root of this project) and uncomment the following line:
     // includeBuild("declarative-gradle/unified-prototype/unified-plugin")
