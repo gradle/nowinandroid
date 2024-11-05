@@ -1,3 +1,7 @@
+plugins {
+    id("com.android.lint")
+}
+
 kotlinJvmLibrary {
     javaVersion = 11
 
@@ -13,4 +17,9 @@ kotlinJvmLibrary {
             implementation("org.jetbrains.kotlin:kotlin-test:1.9.23")
         }
     }
+}
+
+lint {
+    xmlReport = true
+    checkDependencies = true
 }
