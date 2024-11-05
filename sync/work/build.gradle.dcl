@@ -26,7 +26,6 @@ androidLibrary {
             androidImplementation("androidx.work:work-testing:2.9.0")
             androidImplementation("com.google.dagger:hilt-android-testing:2.51")
             androidImplementation(project(":core:testing"))
-            androidImplementation("com.google.guava:guava:31.1-android") // For ListenableFuture
         }
     }
 }
