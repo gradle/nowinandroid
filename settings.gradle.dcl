@@ -104,7 +104,7 @@ defaults {
 
     androidTest {
         jdkVersion = 17
-        minSdk = 28
+        minSdk = 26
         compileSdk = 34
     }
 }
