@@ -26,8 +26,8 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.android-ecosystem").version("0.1.27")
-    id("org.gradle.experimental.kmp-ecosystem").version("0.1.27") // For the Kotlin JVM Library used by :lint
+    id("org.gradle.experimental.android-ecosystem").version("0.1.29")
+    id("org.gradle.experimental.kmp-ecosystem").version("0.1.29") // For the Kotlin JVM Library used by :lint
 }
 
 rootProject.name = "nowinandroid"
@@ -104,7 +104,7 @@ defaults {
 
     androidTest {
         jdkVersion = 17
-        minSdk = 28
+        minSdk = 26
         compileSdk = 34
     }
 }

@@ -21,12 +21,14 @@ import com.google.samples.apps.nowinandroid.PACKAGE_NAME
 import com.google.samples.apps.nowinandroid.interests.goToInterestsScreen
 import com.google.samples.apps.nowinandroid.interests.interestsScrollTopicsDownUp
 import com.google.samples.apps.nowinandroid.startActivityAndAllowNotifications
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 
 /**
  * Baseline Profile of the "Interests" screen
  */
+@Ignore // TODO:DCL Ignore Benchmarks
 class InterestsBaselineProfile {
     @get:Rule val baselineProfileRule = BaselineProfileRule()
 

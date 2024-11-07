@@ -24,10 +24,12 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.uiautomator.By
 import com.google.samples.apps.nowinandroid.PACKAGE_NAME
 import com.google.samples.apps.nowinandroid.startActivityAndAllowNotifications
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+@Ignore // TODO:DCL Ignore Benchmarks
 @RunWith(AndroidJUnit4::class)
 class ScrollTopicListBenchmark {
     @get:Rule

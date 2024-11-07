@@ -27,6 +27,7 @@ import com.google.samples.apps.nowinandroid.PACKAGE_NAME
 import com.google.samples.apps.nowinandroid.allowNotifications
 import com.google.samples.apps.nowinandroid.foryou.forYouWaitForContent
 import com.google.samples.apps.nowinandroid.startActivityAndAllowNotifications
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -36,6 +37,7 @@ import org.junit.runner.RunWith
  * Run this benchmark from Studio to see startup measurements, and captured system traces
  * for investigating your app's performance from a cold state.
  */
+@Ignore // TODO:DCL Ignore Benchmarks
 @RunWith(AndroidJUnit4ClassRunner::class)
 class StartupBenchmark {
     @get:Rule
