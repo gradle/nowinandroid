@@ -205,6 +205,11 @@ jobs:
           validate-wrappers: true
           gradle-home-cache-cleanup: true
 
+# Fix ERROR: detected a hanging thread 'QEMU2 main loop'
+# With advice from: https://stackoverflow.com/questions/47956847/android-studio-emulator-error-detected-a-hanging-thread-qemu2-main-loop
+      - name: Disable IPv6
+        run: cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+
       - name: Build projects and run instrumentation tests
         uses: reactivecircus/android-emulator-runner@v2
         with:

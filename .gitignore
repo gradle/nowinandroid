@@ -47,3 +47,5 @@ captures/
 
 # Kotlin
 .kotlin
+
+declarative-gradle

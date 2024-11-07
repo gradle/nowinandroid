@@ -37,7 +37,7 @@ kotlin {
 }
 
 dependencies {
-    compileOnly(libs.android.gradlePlugin)
+    implementation(libs.android.gradlePlugin) // It is necessary to keep this as a runtime dep to ensure proper version of gradle-api is used to sync
     compileOnly(libs.android.tools.common)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.firebase.crashlytics.gradlePlugin)
