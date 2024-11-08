@@ -31,11 +31,15 @@ androidLibrary {
             implementation(project(":core:testing"))
             implementation(project(":core:screenshot-testing"))
 
-            // TODO:DCL - Was just for Demo flavor
-            implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
-
             androidImplementation("androidx.compose.ui:ui-test-manifest:1.7.0-alpha05")
             androidImplementation(project(":core:testing"))
         }
+    }
+}
+
+afterEvaluate {
+    // DCL does not support platform dependencies or product flavors yet
+    dependencies {
+        add("demoImplementation", "io.github.takahirom.roborazzi:roborazzi:1.7.0")
     }
 }
