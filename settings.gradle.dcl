@@ -102,6 +102,12 @@ defaults {
             }
         }
     }
+
+    androidTest {
+        jdkVersion = 17
+        minSdk = 26
+        compileSdk = 34
+    }
 }
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
