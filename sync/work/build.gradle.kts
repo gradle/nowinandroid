@@ -11,10 +11,6 @@ androidLibrary {
         implementation("androidx.work:work-runtime-ktx:2.9.0")
         implementation(project(":core:analytics"))
         implementation(project(":core:data"))
-
-        // TODO:DCL - No flavors yet, these used to be Prod-only
-        //implementation(platform(libs.firebase.bom)) - TODO:DCL - This was a platform dep
-        implementation("com.google.firebase:firebase-messaging-ktx:23.3.0") // TODO:DCL - This is the version from the platform
     }
 
     testing {
@@ -28,5 +24,13 @@ androidLibrary {
             androidImplementation(project(":core:testing"))
             androidImplementation("com.google.guava:guava:31.1-android") // For ListenableFuture
         }
+    }
+}
+
+afterEvaluate {
+    // DCL does not support platform dependencies or product flavors yet
+    dependencies {
+        add("prodImplementation", platform(libs.firebase.bom))
+        add("prodImplementation", "com.google.firebase:firebase-messaging-ktx")
     }
 }
