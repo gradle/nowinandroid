@@ -9,8 +9,11 @@ androidLibrary {
         api(project(":core:model"))
 
         implementation(project(":core:common"))
-
-        // compileOnly(platform(libs.androidx.compose.bom)) TODO:DCL - This was a platform dep
-        compileOnly("androidx.compose.runtime:runtime:1.6.3") // TODO:DCL - This is the version from the platform
     }
+}
+
+// DCL does not support platform dependencies yet
+dependencies {
+    add("compileOnly", platform(libs.androidx.compose.bom))
+    add("compileOnly", "androidx.compose.runtime:runtime")
 }
