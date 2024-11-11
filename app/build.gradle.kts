@@ -1,3 +1,22 @@
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import com.android.build.api.dsl.ApplicationBuildType
+import com.android.build.api.dsl.CommonExtension
+
 androidApplication {
     namespace = "com.google.samples.apps.nowinandroid"
 
@@ -90,10 +109,6 @@ androidApplication {
         }
 
         release {
-            // TODO:DCL doesn't support setting this to null
-            // Is there any need to explicitly set this to null?
-            // applicationIdSuffix = null
-
             minify {
                 enabled = true
             }
@@ -105,25 +120,9 @@ androidApplication {
                 name = "proguard-rules.pro"
             }
 
-            // TODO:DCL - Skiping converting signing for now
-            // To publish on the Play store a private signing key is required, but to allow anyone
-            // who clones the code to sign and run the release variant, use the debug signing key.
-            // TODO:DCL Abstract the signing configuration to a separate file to avoid hardcoding this.
-            // signingConfig = signingConfigs.named("debug")).get()
-
             baselineProfile {
                 // Ensure Baseline Profile is fresh for release builds.
                 automaticGenerationDuringBuild = true
-            }
-
-            // TODO:DCL - Why is this necessary?  Without it :app:compileDemoReleaseUnitTestKotlin
-            // Can't find deps from the ui-test-hilt-manifest project.  But nowhere in the original
-            // build were those deps added, except to debugImplementation.  What is the configuration
-            // hierarchy in NiA, does the configuration used for this RELEASE compilation classpath
-            // somehow extend the DEBUG compilation classpath?
-            dependencies {
-                implementation("androidx.compose.ui:ui-test-manifest")
-                implementation(project(":ui-test-hilt-manifest"))
             }
         }
     }
@@ -155,6 +154,8 @@ androidApplication {
             implementation("io.github.takahirom.roborazzi:roborazzi:1.7.0")
             implementation(project(":core:screenshot-testing"))
 
+            implementation(project(":ui-test-hilt-manifest"))
+
             androidImplementation(project(":core:testing"))
             androidImplementation(project(":core:data-test"))
             androidImplementation(project(":core:datastore-test"))
@@ -162,13 +163,22 @@ androidApplication {
             androidImplementation("androidx.navigation:navigation-testing:2.7.4")
             androidImplementation("androidx.compose.ui:ui-test-junit4:1.7.0-alpha05")
             androidImplementation("com.google.dagger:hilt-android-testing:2.51")
+
         }
     }
+}
 
-    // TODO:DCL - Packaging
-//    packaging {
-//        resources {
-//        excludes.add("/META-INF/{AL2.0,LGPL2.1}")
-//        }
-//    }
+val android: CommonExtension<*, *, *, *, *, *> = extensions.getByType(CommonExtension::class)
+android.packaging {
+    resources {
+        excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+    }
+}
+afterEvaluate {
+    // To publish on the Play store a private signing key is required, but to allow anyone
+    // who clones the code to sign and run the release variant, use the debug signing key.
+    android.buildTypes {
+        val release: ApplicationBuildType = getByName("release") as ApplicationBuildType
+        release.signingConfig = android.signingConfigs.named("debug").get()
+    }
 }
