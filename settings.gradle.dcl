@@ -69,7 +69,6 @@ defaults {
 
         room {
             enabled = false
-            // TODO:DCL This convention path should ideally be EXPLICITLY relative to the current project's dir (i.e. ${projectDir}/schemas)
             schemaDirectory = "schemas"
         }
 
@@ -80,7 +79,7 @@ defaults {
             generatedRootDir = "generated/source/proto"
 
             dependencies {
-                protoc("com.google.protobuf:protoc:3.25.2") // TODO:DCL How to use to the same version here without duplication?
+                protoc("com.google.protobuf:protoc:3.25.2")
             }
         }
 

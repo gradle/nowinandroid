@@ -46,7 +46,6 @@ androidx.compose.ui:ui-geometry-android:1.7.0
 androidx.compose.ui:ui-geometry:1.7.0
 androidx.compose.ui:ui-graphics-android:1.7.0
 androidx.compose.ui:ui-graphics:1.7.0
-androidx.compose.ui:ui-test-manifest:1.7.0
 androidx.compose.ui:ui-text-android:1.7.0
 androidx.compose.ui:ui-text:1.7.0
 androidx.compose.ui:ui-tooling-preview-android:1.7.0

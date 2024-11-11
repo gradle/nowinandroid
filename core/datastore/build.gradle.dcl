@@ -1,7 +1,6 @@
 androidLibrary {
     namespace = "com.google.samples.apps.nowinandroid.core.datastore"
 
-    // TODO:DCL We really want to model a list of consumer proguard files here, but can't yet
     consumerProguardFile = "consumer-proguard-rules.pro"
 
     hilt {
