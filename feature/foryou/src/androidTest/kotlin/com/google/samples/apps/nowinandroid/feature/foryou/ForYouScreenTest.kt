@@ -52,7 +52,6 @@ class ForYouScreenTest {
     @Test
     fun circularProgressIndicator_whenScreenIsLoading_exists() {
         composeTestRule.setContent {
-            BoxWithConstraints {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState = OnboardingUiState.Loading,
@@ -65,7 +64,6 @@ class ForYouScreenTest {
                     onNewsResourceViewed = {},
                     onDeepLinkOpened = {},
                 )
-            }
         }
 
         composeTestRule
@@ -78,7 +76,6 @@ class ForYouScreenTest {
     @Test
     fun circularProgressIndicator_whenScreenIsSyncing_exists() {
         composeTestRule.setContent {
-            BoxWithConstraints {
                 ForYouScreen(
                     isSyncing = true,
                     onboardingUiState = OnboardingUiState.NotShown,
@@ -91,7 +88,6 @@ class ForYouScreenTest {
                     onNewsResourceViewed = {},
                     onDeepLinkOpened = {},
                 )
-            }
         }
 
         composeTestRule
@@ -106,7 +102,6 @@ class ForYouScreenTest {
         val testData = followableTopicTestData.map { it.copy(isFollowed = false) }
 
         composeTestRule.setContent {
-            BoxWithConstraints {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState = OnboardingUiState.Shown(
@@ -123,7 +118,6 @@ class ForYouScreenTest {
                     onNewsResourceViewed = {},
                     onDeepLinkOpened = {},
                 )
-            }
         }
 
         testData.forEach { testTopic ->
@@ -149,7 +143,6 @@ class ForYouScreenTest {
     @Test
     fun topicSelector_whenSomeTopicsSelected_showsTopicChipsAndEnabledDoneButton() {
         composeTestRule.setContent {
-            BoxWithConstraints {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState =
@@ -170,7 +163,6 @@ class ForYouScreenTest {
                     onNewsResourceViewed = {},
                     onDeepLinkOpened = {},
                 )
-            }
         }
 
         followableTopicTestData.forEach { testTopic ->
@@ -196,7 +188,6 @@ class ForYouScreenTest {
     @Test
     fun feed_whenInterestsSelectedAndLoading_showsLoadingIndicator() {
         composeTestRule.setContent {
-            BoxWithConstraints {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState =
@@ -210,7 +201,6 @@ class ForYouScreenTest {
                     onNewsResourceViewed = {},
                     onDeepLinkOpened = {},
                 )
-            }
         }
 
         composeTestRule
@@ -223,7 +213,6 @@ class ForYouScreenTest {
     @Test
     fun feed_whenNoInterestsSelectionAndLoading_showsLoadingIndicator() {
         composeTestRule.setContent {
-            BoxWithConstraints {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState = OnboardingUiState.NotShown,
@@ -236,7 +225,6 @@ class ForYouScreenTest {
                     onNewsResourceViewed = {},
                     onDeepLinkOpened = {},
                 )
-            }
         }
 
         composeTestRule
