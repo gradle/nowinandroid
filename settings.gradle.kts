@@ -89,3 +89,13 @@ check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     https://developer.android.com/build/jdks#jdk-config-in-studio
     """.trimIndent()
 }
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            // Synchronize changes with build-logic/settings.gradle.kts
+            version("androidGradlePlugin", System.getProperty("agpVersion", "9.0.0-rc03"))
+            version("kotlin", System.getProperty("kotlinVersion", "2.3.0"))
+        }
+    }
+}
