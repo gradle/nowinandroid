@@ -37,6 +37,7 @@ internal fun Project.configureKotlinAndroid(
 ) {
     commonExtension.apply {
         compileSdk = 36
+        buildToolsVersion = System.getProperty("buildToolsVersion", "36.0.0")
 
         defaultConfig.apply {
             minSdk = 23

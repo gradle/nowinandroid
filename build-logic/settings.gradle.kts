@@ -35,6 +35,9 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             from(files("../gradle/libs.versions.toml"))
+            // Synchronize changes with root settings.gradle.kts
+            version("androidGradlePlugin", System.getProperty("agpVersion", "9.0.0-rc03"))
+            version("kotlin", System.getProperty("kotlinVersion", "2.3.0"))
         }
     }
 }
