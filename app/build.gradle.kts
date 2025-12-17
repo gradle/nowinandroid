@@ -154,3 +154,11 @@ baselineProfile {
 dependencyGuard {
     configuration("prodReleaseRuntimeClasspath")
 }
+
+// Gradle addendum
+val kotlinVersion = System.getProperty("kotlinVersion")
+if (kotlinVersion?.startsWith("2.3") == true) {
+    dependencies {
+        ksp("org.jetbrains.kotlin:kotlin-metadata-jvm:2.3.0")
+    }
+}
