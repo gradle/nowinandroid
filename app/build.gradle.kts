@@ -53,8 +53,6 @@ android {
             // who clones the code to sign and run the release variant, use the debug signing key.
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
             signingConfig = signingConfigs.named("debug").get()
-            // Ensure Baseline Profile is fresh for release builds.
-            baselineProfile.automaticGenerationDuringBuild = true
         }
     }
 
@@ -145,6 +143,16 @@ baselineProfile {
 
     // Make use of Dex Layout Optimizations via Startup Profiles
     dexLayoutOptimization = true
+
+    // Ensure Baseline Profile is fresh for release builds.
+    // Replaces the legacy per-buildType `baselineProfile.automaticGenerationDuringBuild = true`
+    // inside `buildTypes { release { ... } }`, which the androidx.baselineprofile 1.5.x plugin
+    // no longer registers under AGP 9.x (newDsl=true default).
+    variants {
+        create("release") {
+            automaticGenerationDuringBuild = true
+        }
+    }
 }
 
 dependencyGuard {
