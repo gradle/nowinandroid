@@ -1,6 +1,16 @@
-![Now in Android](docs/images/nia-splash.jpg "Now in Android")
+> **Declarative Gradle fork.** This is [Gradle](https://github.com/gradle)'s
+> [Declarative Gradle](https://github.com/gradle/declarative-gradle) experiment on top of
+> [android/nowinandroid](https://github.com/android/nowinandroid). We do **not** publish this
+> branch to the Play Store.
+>
+> Compared with upstream:
+> - Hybrid build: some modules use `.gradle.dcl` (`androidLibrary` / `androidApplication` software types); others still use Kotlin DSL
+> - Nightly Gradle and the [Declarative Gradle prototype plugins](https://github.com/gradle/declarative-gradle)
+> - Shared software-type defaults in [`settings.gradle.dcl`](settings.gradle.dcl)
+>
+> Setup, converted modules, and how to build: [DECLARATIVE-README.md](DECLARATIVE-README.md).
 
-<a href="https://play.google.com/store/apps/details?id=com.google.samples.apps.nowinandroid"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="70"></a>
+![Now in Android](docs/images/nia-splash.jpg "Now in Android")
 
 Now in Android App
 ==================
@@ -15,8 +25,6 @@ follows Android design and development best practices and is intended to be a us
 for developers. As a running app, it's intended to help developers keep up-to-date with the world
 of Android development by providing regular news updates.
 
-The app is currently in development. The `prodRelease` variant is [available on the Play Store](https://play.google.com/store/apps/details?id=com.google.samples.apps.nowinandroid).
-
 # Features
 
 **Now in Android** displays content from the
@@ -30,7 +38,7 @@ in, and be notified when new content is published which matches interests they a
 
 # Development Environment
 
-**Now in Android** uses the Gradle build system and can be imported directly into Android Studio (make sure you are using the latest stable version available [here](https://developer.android.com/studio)). 
+**Now in Android** uses the Gradle build system. On this branch, import it into an Android Studio **nightly** that understands `.dcl` files (see [DECLARATIVE-README.md](DECLARATIVE-README.md)). For upstream, the latest stable Studio is [here](https://developer.android.com/studio).
 
 Change the run configuration to `app`.
 
