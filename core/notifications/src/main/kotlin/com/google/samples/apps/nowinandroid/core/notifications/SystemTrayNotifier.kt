@@ -59,7 +59,7 @@ internal class SystemTrayNotifier @Inject constructor(
 
     override fun postNewsNotifications(
         newsResources: List<NewsResource>,
-    ) = with(context) {
+    ): Unit = with(context) {
         if (checkSelfPermission(this, permission.POST_NOTIFICATIONS) != PERMISSION_GRANTED) {
             return
         }
